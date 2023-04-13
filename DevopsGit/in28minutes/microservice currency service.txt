@@ -1,0 +1,9 @@
+Build Currency Exchange Image
+cd ROOT_OF_YOUR_DEVOPS_FOLDER
+cd projects/microservices/01-currency-exchange-microservice-basic
+docker build -t in28min/currency-exchange:0.0.1-RELEASE .
+
+
+Build Currency Conversion Image
+cd ../02-currency-conversion-microservice-basic
+docker build -t in28min/currency-conversion:0.0.1-RELEASE .

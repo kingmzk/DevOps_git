@@ -1,0 +1,117 @@
+1.	terraform {
+2.	  required_providers {
+3.	    aws = {
+4.	      source  = "hashicorp/aws"
+5.	      version = "~> 3.0"
+6.	    }
+7.	  }
+8.	}
+9.	 
+10.	# Configure the AWS Provider
+11.	provider "aws" {
+12.	  region = "us-east-1"
+13.	  # VERSION IS NOT NEEDED HERE
+14.	}
+
+
+
+Commands Executed
+1.	brew install terraform
+2.	terraform --version
+3.	terraform version
+4.	terraform init
+5.	export AWS_ACCESS_KEY_ID=*******
+6.	export AWS_SECRET_ACCESS_KEY=*********
+7.	terraform plan
+8.	terraform console
+9.	terraform apply -refresh=false
+10.	terraform plan -out iam.tfplan
+11.	terraform apply "iam.tfplan"
+12.	terraform apply -target=aws_iam_user.my_iam_user
+13.	terraform destroy
+14.	terraform validate
+15.	terraform fmt
+16.	terraform show
+17.	export TF_VAR_iam_user_name_prefix = FROM_ENV_VARIABLE_IAM_PREFIX
+18.	export TF_VAR_iam_user_name_prefix=FROM_ENV_VARIABLE_IAM_PREFIX
+19.	terraform plan -refresh=false -var="iam_user_name_prefix=VALUE_FROM_COMMAND_LINE"
+20.	terraform apply -target=aws_default_vpc.default
+21.	terraform apply -target=data.aws_subnet_ids.default_subnets
+22.	terraform apply -target=data.aws_ami_ids.aws_linux_2_latest_ids
+23.	terraform apply -target=data.aws_ami.aws_linux_2_latest
+24.	terraform workspace show
+25.	terraform workspace new prod-env
+26.	terraform workspace select default
+27.	terraform workspace list
+28.	terraform workspace select prod-en
+
+
+
+
+Commands Executed
+1.	brew install terraform
+2.	terraform --version
+3.	terraform version
+4.	terraform init
+5.	export AWS_ACCESS_KEY_ID=*******
+6.	export AWS_SECRET_ACCESS_KEY=*********
+7.	terraform plan
+8.	terraform console
+9.	terraform apply -refresh=false
+10.	terraform plan -out iam.tfplan
+11.	terraform apply "iam.tfplan"
+12.	terraform apply -target=aws_iam_user.my_iam_user
+13.	terraform destroy
+14.	terraform validate
+15.	terraform fmt
+16.	terraform show
+17.	export TF_VAR_iam_user_name_prefix = FROM_ENV_VARIABLE_IAM_PREFIX
+18.	export TF_VAR_iam_user_name_prefix=FROM_ENV_VARIABLE_IAM_PREFIX
+19.	terraform plan -refresh=false -var="iam_user_name_prefix=VALUE_FROM_COMMAND_LINE"
+20.	terraform apply -target=aws_default_vpc.default
+21.	terraform apply -target=data.aws_subnet_ids.default_subnets
+22.	terraform apply -target=data.aws_ami_ids.aws_linux_2_latest_ids
+23.	terraform apply -target=data.aws_ami.aws_linux_2_latest
+24.	terraform workspace show
+25.	terraform workspace new prod-env
+26.	terraform workspace select default
+27.	terraform workspace list
+28.	terraform workspace select prod-env
+
+
+
+
+
+
+
+
+
+
+
+
+Updated code for recent Terraform versions
+
+1.	resource "aws_s3_bucket" "my_s3_bucket" {
+2.	    bucket = "my-s3-bucket-in28minutes-rangak-002"
+3.	 #   versioning {
+4.	 #       enabled = true
+5.	 #   }
+6.	}
+7.	 
+8.	resource "aws_s3_bucket_versioning" "versioning_example" {
+9.	  bucket = aws_s3_bucket.my_s3_bucket.id
+10.	  versioning_configuration {
+11.	    status = "Enabled"
+12.	  }
+13.	}
+
+
+
+
+
+In the next lecture, we execute this command to update user details:
+terraform apply -target=aws_iam_user.my_iam_user
+
+This command needs to change based on recent updates. You need to use double quotes (target="aws_iam_user.my_iam_user") around target!
+terraform apply -target="aws_iam_user.my_iam_user"
+

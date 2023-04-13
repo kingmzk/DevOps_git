@@ -1,0 +1,4 @@
+enkins with Docker - Installation Update
+Instructions to install Jenkins with Docker - https://www.jenkins.io/doc/book/installing/docker/#on-macos-and-linux
+
+We will use this in the next lecture!
